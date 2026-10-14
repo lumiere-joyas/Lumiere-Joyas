@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Joyas - El reflejo de tu propia luz</title>
+    <style>
+/* ==========================================================
+   Lumière Joyas - Hoja de estilos compartida
+   ========================================================== */
+
+/* Estilos Generales */
+:root {
+    --primary-gold: #ddbb21;
+    --dark-gold: #f3fd6a;
+    --text-dark: #0c0c0c;
+    --bg-light: #fbfbfb;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Tipografía elegante para joyería */
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+/* Encabezado y Navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid #eee;
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container img {
+    height: 80px;
+    object-fit: contain;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-gold);
+}
+
+.nav-links a.active {
+    color: var(--primary-gold);
+    border-bottom: 2px solid var(--primary-gold);
+    padding-bottom: 4px;
+}
+
+.nav-icons span {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Hero de la página Nosotros */
+.about-hero {
+    background: linear-gradient(rgba(12,12,12,0.55), rgba(12,12,12,0.55)), linear-gradient(135deg, var(--dark-gold), var(--primary-gold));
+    color: var(--white);
+    text-align: center;
+    padding: 90px 5%;
+}
+
+.about-hero h1 {
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.about-hero p {
+    font-size: 1.1em;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* Secciones de Productos / secciones generales */
+.section-container {
+    padding: 50px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--primary-gold);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Historia / texto de la empresa */
+.about-text {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.05em;
+    line-height: 1.9;
+    color: #333;
+    text-align: center;
+}
+
+/* Misión, Visión y Valores */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.info-card {
+    border: 1px solid #eee;
+    padding: 30px 25px;
+    text-align: center;
+    background: var(--bg-light);
+    transition: box-shadow 0.3s;
+}
+
+.info-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.info-card .icon {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.info-card h3 {
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Estadísticas */
+.stats-section {
+    background-color: var(--bg-light);
+    padding: 50px 5%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-item .stat-number {
+    font-size: 2.5em;
+    color: var(--primary-gold);
+}
+
+.stat-item .stat-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+/* Grid de Productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+    background: var(--white);
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    background-color: #f5f5f5;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-placeholder {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f0fa, #fbeaf5);
+}
+
+.product-placeholder svg {
+    width: 60px;
+    height: 60px;
+    fill: var(--primary-gold);
+    opacity: 0.6;
+}
+
+.badge-new {
+    display: inline-block;
+    background-color: var(--dark-gold);
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+}
+
+.product-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 1.2em;
+    color: var(--primary-gold);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    background-color: var(--white);
+    color: var(--primary-gold);
+    border: 1px solid var(--primary-gold);
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-add:hover {
+    background-color: var(--primary-gold);
+    color: var(--white);
+}
+
+/* Testimonios */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    padding: 25px;
+}
+
+.testimonial-card p.quote {
+    font-style: italic;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .stars {
+    color: var(--primary-gold);
+    margin-bottom: 10px;
+}
+
+.testimonial-card .author {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+}
+
+/* Sección Checkout / Datos de Envío */
+.checkout-section {
+    background-color: var(--bg-light);
+    padding: 50px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    border-top: 1px solid #eee;
+}
+
+.checkout-box {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid #eee;
+}
+
+.checkout-box h3 {
+    color: var(--primary-gold);
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.totals {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.totals-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.btn-checkout {
+    background-color: var(--primary-gold);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.btn-checkout:hover {
+    background-color: var(--dark-gold);
+}
+
+/* Pie de Página (Footer) */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 50px 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+footer h4 {
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.social-icons span {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social-icons span:hover {
+    color: var(--primary-gold);
+}
+
+.social-icons a {
+    display: inline-flex;
+    line-height: 0;
+}
+
+.social-icons a svg {
+    transition: fill 0.3s;
+}
+
+.social-icons a:hover svg {
+    fill: var(--primary-gold);
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+/* ==========================================================
+   Lumière Joyas - Hoja de estilos compartida
+   ========================================================== */
+
+@media (max-width: 768px) {
+    footer { grid-template-columns: 1fr; }
+    .checkout-section { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================
+   Carrito de Compras
+   ========================================================== */
+
+#cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--primary-gold);
+    color: var(--white);
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    min-width: 17px;
+    height: 17px;
+    line-height: 17px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 2px;
+}
+
+.cart-badge.hidden {
+    display: none;
+}
+
+/* Fondo oscuro detrás del panel */
+.cart-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 2000;
+}
+
+.cart-overlay.open {
+    display: block;
+}
+
+/* Panel lateral del carrito */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 380px;
+    max-width: 90vw;
+    background: var(--white);
+    box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+.cart-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-drawer-header h3 {
+    margin: 0;
+    color: var(--primary-gold);
+}
+
+.cart-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.cart-drawer-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+}
+
+.cart-drawer-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item img,
+.cart-item .cart-item-placeholder {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    background: var(--bg-light);
+    flex-shrink: 0;
+}
+
+.cart-item .cart-item-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.cart-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item-info .cart-item-name {
+    font-size: 13px;
+    margin: 0 0 4px 0;
+    color: var(--text-dark);
+}
+
+.cart-item-info .cart-item-price {
+    font-size: 13px;
+    color: var(--primary-gold);
+    font-weight: bold;
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-item-qty button {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ddd;
+    background: var(--white);
+    cursor: pointer;
+    line-height: 1;
+    font-size: 14px;
+}
+
+.cart-item-qty button:hover {
+    background: var(--bg-light);
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.cart-item-remove:hover {
+    color: #c0392b;
+}
+
+.empty-cart-msg {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 30px 10px;
+}
+
+/* Resumen de productos dentro del checkout */
+.checkout-items {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.checkout-item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item-row .qty {
+    color: #999;
+    margin-left: 5px;
+}
+
+/* Campos de tarjeta / nota de PayPal */
+.paypal-note {
+    background: var(--bg-light);
+    border: 1px solid #eee;
+    padding: 12px;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Botones de selección de método de pago */
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 8px;
+    border: 2px solid #ddd;
+    background: var(--white);
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 12px;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+    border-color: var(--primary-gold);
+}
+
+.payment-option.selected {
+    border-color: var(--primary-gold);
+    background: var(--bg-light);
+    color: var(--primary-gold);
+    font-weight: bold;
+}
+
+.payment-option-icon {
+    font-size: 22px;
+}
+
+/* Caja de pago en efectivo (recuadro propio, distinto de la nota de PayPal) */
+.cash-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f3faf0;
+    border: 1px solid #bfe3ac;
+    padding: 14px;
+    margin-bottom: 15px;
+}
+
+.cash-box-icon {
+    font-size: 26px;
+    line-height: 1;
+}
+
+.cash-box strong {
+    display: block;
+    color: #2e7d32;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.cash-box p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.checkout-error {
+    color: #c0392b;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 16px;
+}
+
+.btn-checkout:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-group input.input-error {
+    border-color: #c0392b;
+}
+
+/* Modal de confirmación */
+#confirmation-overlay {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#confirmation-overlay.open {
+    display: flex;
+}
+
+.confirmation-box {
+    background: var(--white);
+    padding: 40px 35px;
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+}
+
+.confirmation-icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background: var(--primary-gold);
+    color: var(--white);
+    font-size: 28px;
+    margin: 0 auto 20px auto;
+}
+
+.confirmation-box h3 {
+    color: var(--primary-gold);
+    margin-bottom: 10px;
+}
+
+.confirmation-box p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Notificación toast */
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 12px 22px;
+    font-size: 14px;
+    z-index: 3000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 480px) {
+    .cart-drawer { width: 100vw; }
+}
+
+/* ==========================================================
+   Barra de Búsqueda
+   ========================================================== */
+
+.search-bar {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-light);
+    border-top: 1px solid #eee;
+    padding: 12px 5%;
+}
+
+.search-bar.open {
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: 5px 8px;
+}
+
+.product-card.search-hidden {
+    display: none !important;
+}
+
+.no-results-msg {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 20px;
+    grid-column: 1 / -1;
+}
+
+    
+/* ===== Mejoras: búsqueda con resultados, encabezado, WhatsApp ===== */
+header { flex-wrap: wrap; gap: 10px; }
+.search-bar { flex: 0 0 100%; flex-wrap: wrap; box-sizing: border-box; padding: 12px; border: 1px solid #eee; }
+.search-bar input { min-width: 0; }
+.search-results { flex: 0 0 100%; max-height: 60vh; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.search-results:empty { display: none; }
+.sr-item { display: flex; align-items: center; gap: 8px; background: var(--white); border: 1px solid #eee; padding: 8px; }
+.sr-link { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.sr-link img { width: 56px; height: 56px; object-fit: cover; flex-shrink: 0; background: #f5f5f5; }
+.sr-name { font-size: 13px; margin: 0 0 3px; }
+.sr-meta { font-size: 12px; color: #999; }
+.sr-price { font-size: 13px; font-weight: bold; color: var(--primary-gold); }
+.sr-add { border: 1px solid var(--primary-gold); background: var(--white); color: var(--primary-gold); padding: 8px 10px; font-size: 12px; cursor: pointer; text-transform: uppercase; }
+.sr-add:hover { background: var(--primary-gold); color: var(--white); }
+.sr-msg { grid-column: 1 / -1; text-align: center; color: #999; font-size: 14px; padding: 12px; margin: 0; }
+.product-card { scroll-margin-top: 170px; }
+section[id] { scroll-margin-top: 110px; }
+.product-card:target { animation: lumiere-flash 2.5s; }
+@keyframes lumiere-flash { 0%, 70% { box-shadow: 0 0 0 3px var(--primary-gold); } 100% { box-shadow: none; } }
+.hero-btn { display: inline-block; margin-top: 20px; padding: 12px 28px; background: var(--white); color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
+.wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 1500; width: 54px; height: 54px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 26px; text-decoration: none; box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+
+
+/* ===== Aviso de producto agotado ===== */
+.product-card { position: relative; }
+.badge-soldout { position: absolute; top: 12px; right: 12px; z-index: 2; background: #c62828; color: #fff; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 11px; }
+.product-card.sold-out img, .product-card.sold-out .product-placeholder { filter: grayscale(1); opacity: .5; }
+.product-card.sold-out .product-desc, .product-card.sold-out .price { opacity: .55; }
+.btn-add:disabled, .sr-add:disabled { background: #fdecea; color: #c62828; border-color: #c62828; cursor: not-allowed; }
+.sr-item.sold-out img { filter: grayscale(1); opacity: .5; }
+.sr-soldout { display: inline-block; margin-left: 6px; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: #c62828; padding: 2px 7px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="logo-container">
+            <!-- Enlazando la imagen de tu logo -->
+            <img src="imagenes/logo_de_lumiere_joyas.jpeg" alt="Lumière Joyas Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="lumiere_joyas.html">Inicio</a>
+            <a href="lumiere_joyas.html#colecciones">Colecciones</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="nosotros.html#contacto">Contacto</a>
+        </nav>
+        <div class="nav-icons">
+            <span id="search-icon" title="Buscar">🔍</span> <!-- Icono de Búsqueda -->
+            <span id="cart-icon" title="Ver carrito">🛍️<span id="cart-count" class="cart-badge">0</span></span> <!-- Icono de Carrito -->
+        </div>
+        <div id="search-bar" class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar anillos, collares, aretes, pulseras...">
+            <button id="search-close" aria-label="Cerrar búsqueda">✕</button>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <h1>El reflejo de tu propia luz</h1>
+        <p>Anillos, aretes, collares y pulseras para brillar todos los días. Elige tus favoritos y envía tu pedido directo por WhatsApp.</p>
+        <a class="hero-btn" href="#colecciones">Ver colecciones</a>
+    </section>
+
+
+    <!-- Colección: Anillos -->
+    <section class="section-container" id="colecciones">
+        <h2 class="section-title">Anillos</h2>
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-id="anillo-1">
+                <img src="imagenes/anillo 1.png"Imagen de Anillo">
+                <p class="product-desc">Anillo con perla forma de estrella (ajustable).</p>
+                <div class="price">$2.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product-card" data-id="anillo-2">
+                <img src="imagenes/anillo 2.png" alt="Imagen de Anillo">
+                <p class="product-desc">Anillo diseño simple (ajustable) .</p>
+                <div class="price">$ 2.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="product-card" data-id="anillo-3">
+                <img src="imagenes/conjunto de anillos.jpeg" alt="Imagen de Anillo">
+                <p class="product-desc">Conjunto de anillos ajustables.</p>
+                <div class="price">$ 3.50</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+                </div>
+            <!--Producto 4-->
+            <div class="product-card" data-id="anillo-4">
+                <img src="imagenes/anillos.jpg" alt="Imagen de Anillo">
+                <p class="product-desc">anillo dorado con perla.</p>
+                <div class="price">$ 2.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colección: Aretes -->
+    <section class="section-container">
+        <h2 class="section-title">Aretes</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="arete-1">
+                <img src="imagenes/aretes de culebra.jpg" alt="Imagen de Aretes">
+                <p class="product-desc">Aretes con forma de serpiente.</p>
+                <div class="price">$ 3.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <div class="product-card" data-id="arete-2">
+                <img src="imagenes/aretes 2.jpeg" alt="Imagen de Aretes">
+                <p class="product-desc">Aretes con forma de corazón.</p>
+                <div class="price">$ 1.75</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+             <div class="product-card" data-id="arete-3">
+                <img src="imagenes/arete circular.jpg" alt="Imagen de Aretes">
+                <p class="product-desc">Argollas plateadas.</p>
+                <div class="price">$ 1.75</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+             <div class="product-card" data-id="arete-4">
+                <img src="imagenes/argolla.jpeg" alt="Imagen de Aretes">
+                <p class="product-desc">Argolla simple dorada.</p>
+                <div class="price">$ 2.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colección: Collares -->
+    <section class="section-container">
+        <h2 class="section-title">Collares</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="collar-1">
+                <img src="imagenes/gargantia (2).png" alt="Imagen de Collar">
+                <p class="product-desc">Gargantilla plateada.</p>
+                <div class="price">$ 2.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <div class="product-card" data-id="collar-2">
+                <img src="imagenes/collar 2.jpg" alt="Imagen de Collar">
+                <p class="product-desc">Collar de cereza.</p>
+                <div class="price">$ 1.75</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <div class="product-card" data-id="collar-3">
+                <img src="imagenes/gargantia.png" alt="Imagen de Collar">
+                <p class="product-desc">Gargantilla diseño con flores</p>
+                <div class="price">$ 2.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+             <div class="product-card" data-id="collar-4">
+                <img src="imagenes/collar.jpeg" alt="Imagen de Collar">
+                <p class="product-desc">Gargantilla con diseño de trebol cuatro hojas.</p>
+                <div class="price">$ 2.50</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+        </div>
+    </section>
+     <!-- Colección: pulseras -->
+    <section class="section-container">
+        <h2 class="section-title">Pulseras</h2>
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-card" data-id="pulsera-1">
+                <img src="imagenes/pulsera roja.jpg" alt="Imagen de pulsera">
+                <p class="product-desc">Pulsera de perlas rojas.</p>
+                <div class="price">$2.50</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <!-- Producto 2 -->
+            <div class="product-card" data-id="pulsera-2">
+                <img src="imagenes/pulsera.png" alt="Imagen de pulsera">
+                <p class="product-desc">pulsera con doble plateada</p>
+                <div class="price">$ 2.50</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+            <!-- Producto 3 -->
+            <div class="product-card" data-id="pulsera-3">
+                <img src="imagenes/flor.jpeg" alt="Imagen de pulsera">
+                <p class="product-desc">Pulsera diseño de trebol de cuatro hojas.</p>
+                <div class="price">$ 3.00</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+                </div>
+            <!--Producto 4-->
+            <div class="product-card" data-id="pulsera-4">
+                <img src="imagenes/simple.jpeg" alt="Imagen de pulsera">
+                <p class="product-desc">Pulseras diseño simple</p>
+                <div class="price">$ 0.50</div>
+                <button class="btn-add">Añadir al carrito 🛒</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Pago y Envío -->
+    <section class="checkout-section" id="pago">
+        <div class="checkout-box">
+            <h3>Datos de Envío</h3>
+            <div class="form-group">
+                <label for="ship-email">Email (opcional)</label>
+                <input type="email" id="ship-email" placeholder="correo@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label for="ship-name">Nombre Completo</label>
+                <input type="text" id="ship-name" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <label for="ship-address">Dirección de entrega</label>
+                <input type="text" id="ship-address" placeholder="Calle, número, ciudad">
+            </div>
+        </div>
+
+        <div class="checkout-box">
+            <h3>Métodos de Pago y Resumen</h3>
+
+            <div id="checkout-items" class="checkout-items">
+                <p class="empty-cart-msg">Tu carrito está vacío. Añade productos para continuar.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Selecciona método de pago</label>
+                <div class="payment-options">
+                    <button type="button" class="payment-option selected" data-method="tarjeta">
+                        <span class="payment-option-icon">💳</span>
+                        <span>Tarjeta</span>
+                    </button>
+                    <button type="button" class="payment-option" data-method="paypal">
+                        <span class="payment-option-icon">🅿️</span>
+                        <span>PayPal</span>
+                    </button>
+                    <button type="button" class="payment-option" data-method="efectivo">
+                        <span class="payment-option-icon">💵</span>
+                        <span>Efectivo</span>
+                    </button>
+                </div>
+                <!-- Select oculto: mantiene el valor seleccionado para el resto del código -->
+                <select id="payment-method" style="display:none;">
+                    <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="efectivo">Efectivo (contra entrega)</option>
+                </select>
+            </div>
+
+            <div id="card-fields" class="paypal-note">Coordinaremos el pago con tarjeta contigo por WhatsApp. Por tu seguridad, no escribas aquí los datos de tu tarjeta.</div>
+
+            <div id="paypal-note" class="paypal-note" style="display:none;">
+                Al enviar el pedido te daremos los datos para pagar con PayPal por WhatsApp.
+            </div>
+
+            <div id="cash-note" class="cash-box" style="display:none;">
+                <div class="cash-box-icon">💵</div>
+                <div>
+                    <strong>Pago en efectivo contra entrega</strong>
+                    <p>Ten el monto exacto (<span id="cash-total">$ 0.00</span>) listo para el repartidor al recibir tu pedido.</p>
+                </div>
+            </div>
+
+            <div class="totals">
+                <div class="totals-row">
+                    <span>Subtotal</span>
+                    <span id="totals-subtotal">$ 0.00</span>
+                </div>
+                <div class="totals-row">
+                    <span>Costo de Envío</span>
+                    <span id="totals-shipping">$ 0.00</span>
+                </div>
+                <div class="totals-row" style="font-weight: bold; font-size: 1.2em; color: var(--primary-gold);">
+                    <span>TOTAL</span>
+                    <span id="totals-total">$ 0.00</span>
+                </div>
+            </div>
+            <button class="btn-checkout" id="btn-checkout">Enviar pedido por WhatsApp 💬</button>
+            <p id="checkout-error" class="checkout-error"></p>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div>
+            <h4>Más Sobre Nosotros</h4>
+            <p class="footer-text">
+                "El reflejo de tu propia luz."<br><br>
+                En Lumière Joyas nos dedicamos a ofrecer piezas únicas que resalten la belleza natural y la elegancia de quien las usa.
+            </p>
+        </div>
+        <div>
+            <h4>Cómo Encontrarnos</h4>
+            <p class="footer-text">
+                📍 Instituto Nacional Simón Bolivar<br>
+                Ciudad<br><br>
+                Horario: Lunes a viernes, 7:30 AM - 3:00 PM
+            </p>
+        </div>
+        <div>
+            <h4>Redes Sociales</h4>
+            <div class="social-icons">
+                <a href="https://wa.me/50375213830" target="_blank" title="WhatsApp" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="#ccc"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.148.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.87.512 3.678 1.482 5.256L2 22l4.883-1.437A9.958 9.958 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.164a8.13 8.13 0 0 1-4.147-1.135l-.297-.176-2.898.853.868-2.822-.193-.29A8.14 8.14 0 0 1 3.837 12c0-4.507 3.657-8.164 8.164-8.164 4.508 0 8.164 3.657 8.164 8.164 0 4.508-3.656 8.164-8.164 8.164z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/lumie_rejoyas/" target="_blank" title="Instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="#ccc"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.163 6.163 0 1 0 0 12.326 6.163 6.163 0 0 0 0-12.326zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/share/1Kuqvwmt4h/" target="_blank" title="Facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="#ccc"><path d="M22 12.061C22 6.505 17.523 2 12 2S2 6.505 2 12.061c0 5.022 3.657 9.184 8.438 9.939v-7.03H7.898v-2.91h2.54V9.845c0-2.522 1.492-3.915 3.777-3.915 1.094 0 2.238.196 2.238.196v2.475h-1.26c-1.243 0-1.63.775-1.63 1.57v1.89h2.773l-.443 2.91h-2.33V22c4.78-.755 8.437-4.917 8.437-9.939z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@lumire.joyas" target="_blank" title="TikTok" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="#ccc"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg>
+                </a>
+            </div>
+            <p class="footer-text" style="margin-top: 15px;">Síguenos para conocer nuestras últimas colecciones y promociones.</p>
+        </div>
+    </footer>
+
+    <!-- Panel del Carrito -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <aside id="cart-drawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3>Tu Carrito</h3>
+            <button id="cart-close" class="cart-close" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div id="cart-items" class="cart-drawer-items">
+            <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="totals-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$ 0.00</span>
+            </div>
+            <button id="cart-checkout-btn" class="btn-checkout">Ir a pagar</button>
+        </div>
+    </aside>
+
+    <!-- Modal de Confirmación de Compra -->
+    <div id="confirmation-overlay" class="cart-overlay">
+        <div class="confirmation-box">
+            <div class="confirmation-icon">✓</div>
+            <h3>¡Tu pedido está casi listo!</h3>
+            <p id="confirmation-text"></p>
+            <p><a id="wa-fallback" href="#" target="_blank" rel="noopener">Abrir WhatsApp de nuevo</a></p>
+            <button id="confirmation-close" class="btn-checkout">Seguir Comprando</button>
+        </div>
+    </div>
+
+    <!-- Notificación tipo toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="inventario.js"></script>
+    <script>
+// ==========================================================
+// Lumière Joyas - lógica compartida (catálogo, búsqueda, carrito y pedido por WhatsApp)
+// El carrito se guarda en localStorage y se comparte entre las dos páginas.
+// ==========================================================
+
+const CART_KEY = 'lumiere_cart';
+const SHIPPING_COST = 0.00;
+const WHATSAPP_NUMBER = '50375213830'; // 503 (El Salvador) + 7521-3830
+
+// Catálogo único (fuente de verdad de nombres y precios).
+// [id, categoría, nombre, descripción, precio, imagen, palabras extra para buscar]
+const CATALOG = [
+    ['anillo-1', 'Anillos', 'Anillo forma de estrella', 'anillo con perlas forma de estrella (ajustable).', 2, 'anillo 1.png'],
+    ['anillo-2', 'Anillos', 'Anillo diseño simple', 'Anillo diseño simple', 2, 'anillo 2.png'],
+    ['anillo-3', 'Anillos', 'conjunto de anillos', 'conjunto de anillos ajustables .', 3.50, 'conjunto de anillos.jpeg'],
+    ['anillo-4', 'Anillos', 'anillo dorado con perla', 'anillo dorado con perla', 2, 'anillos.jpg'],
+    ['arete-1', 'Aretes', 'Aretes con forma de serpiente', 'Aretes con forma de serpiente.',2,'aretes de culebra.jpg'],
+    ['arete-2', 'Aretes', 'Aretes con forma de corazón', 'Aretes con forma de corazon.', 2, 'aretes 2.jpeg'],
+    ['arete-3', 'Aretes', 'Argollas plateadas', 'argollas plateadas', 1.75, 'arete circular.jpg'],
+    ['arete-4', 'Aretes', 'Argolla simple dorada', 'Argolla simple dorada.', 2, 'argolla.jpeg'],
+    ['collar-1', 'Collares', 'gargantilla plateada', 'gargantilla plateada.', 2, 'gargantia (2).png'],
+    ['collar-2', 'Collares', 'Collar de cereza', 'Collar de cereza.', 1.75, 'collar 2.jpg', 'choker'],
+    ['collar-3', 'Collares', 'Gargantilla diseño con flores ', 'gargantilla diseño con flores.', 2, 'gargantia.png'],
+    ['collar-4', 'Collares', 'gargantilla con diseño de trebol cuatro hojas', 'gargantilla con diseño de trebol cuatro hojas.', 2.50, 'collar.jpeg'],
+    ['pulsera-1', 'Pulseras', 'Pulsera de perlas rojas', 'Pulsera de perlas rojas.', 2, 'pulsera roja.jpg'],
+    ['pulsera-2', 'Pulseras', 'pulsera con doble plateada', 'pulsera con doble plateada.', 2.50, 'pulsera.png'],
+    ['pulsera-3', 'Pulseras', 'Pulsera diseño de trebol de cuatro hojas.', 'Pulsera diseño de trebol de cuatro hojas..', 3, 'flor.jpeg'],
+    ['pulsera-4', 'Pulseras', 'Pulseras diseño simple', 'Pulseras diseño simple.', 0.50, 'simple.jpeg'],
+    ['novedad-1', 'Aretes', 'Aretes forma de petalos', 'Aretes forma de petalos.', 2.50, 'arete unico.jpg'],
+    ['novedad-2', 'pulsera', 'pulsera plateada con diseño', 'pulsera plateada con diseño', 2, 'pulsera 2.jpeg'],
+    ['novedad-3', 'collar', 'Collar en forma de estrella.', 'Collar en forma de estrella..', 3.50, 'collar en forma de estrella.jpeg'],
+    ['novedad-4', 'collar', 'collar de tres cadenas en una.', 'collar de tres cadenas en una.', 2.75, 'collar triple.png'],
+    ['novedad-5', 'conjunto', 'conjunto de collar y aretes de mariposa.', 'conjunto de collar y aretes de mariposa.', 4, 'conjunto de collar y aretes de mariposa.png'],
+    ['novedad-6', 'aretes', 'aretes colgantes en forma de delfin.', 'aretes colgantes en forma de delfin.', 3, 'unica.jpeg'],
+].map(([id, cat, name, desc, price, img, kw]) => ({ id, cat, name, desc, price, img: 'imagenes/' + img, kw: kw || '' }));
+
+const $ = (id) => document.getElementById(id);
+const byId = (id) => CATALOG.find((p) => p.id === id);
+const pageOf = (id) => (id.startsWith('novedad') ? 'nosotros.html' : 'lumiere_joyas.html');
+
+// Cantidad máxima por producto: 2 en los de lumiere_joyas.html y 1 en los de nosotros.html
+const pageMaxOf = (id) => (pageOf(id) === 'nosotros.html' ? 1 : 2);
+
+// Inventario: las cantidades se editan en inventario.js (0 = Agotado).
+// Si un producto no aparece en inventario.js, se considera disponible.
+const SOLD_KEY = 'lumiere_sold';
+const invVersion = () => (typeof INVENTARIO_VERSION !== 'undefined' ? INVENTARIO_VERSION : 0);
+
+// Compras ya enviadas desde este dispositivo (se reinician al subir INVENTARIO_VERSION en inventario.js)
+function getSold() {
+    try {
+        const d = JSON.parse(localStorage.getItem(SOLD_KEY)) || {};
+        return d.v === invVersion() ? (d.items || {}) : {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function registerSale(cart) {
+    const items = getSold();
+    cart.forEach((i) => { items[i.id] = (items[i.id] || 0) + i.qty; });
+    try {
+        localStorage.setItem(SOLD_KEY, JSON.stringify({ v: invVersion(), items }));
+    } catch (e) {
+        console.error('No se pudo registrar la compra:', e);
+    }
+}
+
+const stockOf = (id) => (typeof STOCK !== 'undefined' && Number.isFinite(STOCK[id]) ? Math.max(0, STOCK[id] - (getSold()[id] || 0)) : Infinity);
+const soldOut = (id) => stockOf(id) <= 0;
+
+// Máximo por pedido: el menor entre el límite de la página y las piezas disponibles
+const maxQtyOf = (id) => Math.min(pageMaxOf(id), stockOf(id));
+const maxMsg = (id) => {
+    const stock = stockOf(id);
+    if (stock < pageMaxOf(id)) return `Solo ${stock === 1 ? 'hay 1 unidad disponible' : `hay ${stock} unidades disponibles`}`;
+    return pageMaxOf(id) === 1
+        ? 'Solo puedes llevar 1 unidad de este producto'
+        : `Máximo ${pageMaxOf(id)} unidades por producto`;
+};
+
+// ---------- Carrito ----------
+
+function getCart() {
+    try {
+        const raw = JSON.parse(localStorage.getItem(CART_KEY)) || [];
+        // Siempre toma nombre y precio del catálogo (ignora datos viejos guardados)
+        return raw.map((i) => (byId(i.id) ? { ...byId(i.id), qty: Math.min(i.qty, maxQtyOf(i.id)) } : null)).filter((i) => i && i.qty > 0);
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveCart(cart) {
+    try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart.map(({ id, qty }) => ({ id, qty }))));
+    } catch (e) {
+        console.error('No se pudo guardar el carrito:', e);
+    }
+}
+
+function addToCart(id) {
+    const product = byId(id);
+    if (!product) return;
+    if (soldOut(id)) {
+        showToast('Este producto está agotado');
+        return;
+    }
+    const cart = getCart();
+    const existing = cart.find((i) => i.id === id);
+    if (existing) {
+        if (existing.qty >= maxQtyOf(id)) {
+            showToast(maxMsg(id));
+            openCart();
+            return;
+        }
+        existing.qty += 1;
+    } else cart.push({ ...product, qty: 1 });
+    saveCart(cart);
+    renderAll();
+    showToast(`${product.name} añadido al carrito ✓`);
+    openCart();
+}
+
+function changeQty(id, delta) {
+    const cart = getCart();
+    const item = cart.find((p) => p.id === id);
+    if (!item) return;
+    if (delta > 0 && item.qty >= maxQtyOf(id)) {
+        showToast(maxMsg(id));
+        return;
+    }
+    item.qty += delta;
+    saveCart(cart.filter((p) => p.qty > 0));
+    renderAll();
+}
+
+function removeFromCart(id) {
+    saveCart(getCart().filter((p) => p.id !== id));
+    renderAll();
+}
+
+function clearCart() {
+    saveCart([]);
+    renderAll();
+}
+
+function calculateTotals(cart) {
+    const subtotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+    const shipping = subtotal > 0 ? SHIPPING_COST : 0;
+    return { subtotal, shipping, total: subtotal + shipping };
+}
+
+function formatMoney(n) {
+    return `$ ${n.toFixed(2)}`;
+}
+
+// ---------- Renderizado ----------
+
+function renderCartCount(cart) {
+    const el = $('cart-count');
+    if (!el) return;
+    const total = cart.reduce((sum, i) => sum + i.qty, 0);
+    el.textContent = total;
+    el.classList.toggle('hidden', total === 0);
+}
+
+function renderCartDrawer(cart) {
+    const itemsEl = $('cart-items');
+    if (!itemsEl) return;
+    itemsEl.innerHTML = cart.length === 0
+        ? '<p class="empty-cart-msg">Tu carrito está vacío.</p>'
+        : cart.map((i) => `
+            <div class="cart-item">
+                <img src="${i.img}" alt="${i.name}">
+                <div class="cart-item-info">
+                    <p class="cart-item-name">${i.name}</p>
+                    <span class="cart-item-price">${formatMoney(i.price)}</span>
+                    <div class="cart-item-qty">
+                        <button class="qty-minus" data-id="${i.id}">−</button>
+                        <span>${i.qty}</span>
+                        <button class="qty-plus" data-id="${i.id}">+</button>
+                        <button class="cart-item-remove" data-id="${i.id}" title="Quitar">🗑</button>
+                    </div>
+                </div>
+            </div>`).join('');
+    const subtotalEl = $('cart-subtotal');
+    if (subtotalEl) subtotalEl.textContent = formatMoney(calculateTotals(cart).subtotal);
+}
+
+function renderCheckoutSummary(cart) {
+    const itemsEl = $('checkout-items');
+    if (!itemsEl) return; // solo existe en lumiere_joyas.html
+    itemsEl.innerHTML = cart.length === 0
+        ? '<p class="empty-cart-msg">Tu carrito está vacío. Añade productos para continuar.</p>'
+        : cart.map((i) => `
+            <div class="checkout-item-row">
+                <span>${i.name}<span class="qty">x${i.qty}</span></span>
+                <span>${formatMoney(i.price * i.qty)}</span>
+            </div>`).join('');
+    const { subtotal, shipping, total } = calculateTotals(cart);
+    $('totals-subtotal').textContent = formatMoney(subtotal);
+    $('totals-shipping').textContent = formatMoney(shipping);
+    $('totals-total').textContent = formatMoney(total);
+    $('btn-checkout').disabled = cart.length === 0;
+    if ($('cash-total')) $('cash-total').textContent = formatMoney(total);
+}
+
+function renderAll() {
+    const cart = getCart();
+    renderCartCount(cart);
+    renderCartDrawer(cart);
+    renderCheckoutSummary(cart);
+}
+
+function openCart() {
+    $('cart-drawer')?.classList.add('open');
+    $('cart-overlay')?.classList.add('open');
+}
+
+function closeCart() {
+    $('cart-drawer')?.classList.remove('open');
+    $('cart-overlay')?.classList.remove('open');
+}
+
+let toastTimeout;
+function showToast(message) {
+    const toast = $('toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// ---------- Búsqueda (muestra los resultados debajo de la barra) ----------
+
+function normalizeText(str) {
+    return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // quita acentos
+}
+
+function searchProducts(query) {
+    const tokens = normalizeText(query).split(/\s+/).filter(Boolean);
+    return CATALOG.filter((p) => {
+        const text = normalizeText(`${p.name} ${p.desc} ${p.cat} ${p.kw}`);
+        // "aretes", "collares", "perlas" también encuentran arete, collar, perla
+        return tokens.every((t) => [t, t.replace(/e?s$/, '')].some((v) => v.length > 1 && text.includes(v)));
+    });
+}
+
+function renderSearch(rawQuery) {
+    const box = $('search-results');
+    if (!box) return;
+    const query = rawQuery.trim();
+    if (query.length < 2) {
+        box.innerHTML = '';
+        return;
+    }
+    const results = searchProducts(query);
+    if (results.length === 0) {
+        box.innerHTML = '<p class="sr-msg"></p>';
+        box.firstChild.textContent = `No encontramos resultados para "${query}".`;
+        return;
+    }
+    box.innerHTML = results.map((p) => `
+        <div class="sr-item${soldOut(p.id) ? ' sold-out' : ''}">
+            <a class="sr-link" href="${pageOf(p.id)}#${p.id}">
+                <img src="${p.img}" alt="" onerror="this.style.visibility='hidden'">
+                <div class="sr-info">
+                    <p class="sr-name">${p.name}</p>
+                    <span class="sr-meta">${p.cat}</span> <span class="sr-price">${formatMoney(p.price)}</span>${soldOut(p.id) ? '<span class="sr-soldout">Agotado</span>' : ''}
+                </div>
+            </a>
+            <button class="sr-add" data-id="${p.id}"${soldOut(p.id) ? ' disabled' : ''}>${soldOut(p.id) ? 'Agotado' : 'Añadir'}</button>
+        </div>`).join('');
+}
+
+function openSearch() {
+    $('search-bar')?.classList.add('open');
+    $('search-input')?.focus();
+}
+
+function closeSearch() {
+    $('search-bar')?.classList.remove('open');
+    if ($('search-input')) $('search-input').value = '';
+    renderSearch('');
+}
+
+// ---------- Pedido por WhatsApp ----------
+
+let pendingOrderUrl = null;
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function markError(input, hasError) {
+    input?.classList.toggle('input-error', hasError);
+}
+
+function buildOrderMessage(orderNumber, data, cart) {
+    const { subtotal, shipping, total } = calculateTotals(cart);
+    return [
+        `*Nuevo pedido #${orderNumber} - Lumière Joyas*`,
+        '',
+        `*Cliente:* ${data.name}`,
+        `*Dirección de entrega:* ${data.address}`,
+        data.email ? `*Email:* ${data.email}` : null,
+        `*Método de pago:* ${data.method}`,
+        '',
+        '*Productos:*',
+        ...cart.map((i) => `• ${i.qty} x ${i.name} — ${formatMoney(i.price * i.qty)}`),
+        '',
+        `Subtotal: ${formatMoney(subtotal)}`,
+        `Envío: ${formatMoney(shipping)}`,
+        `*TOTAL: ${formatMoney(total)}*`,
+    ].filter((line) => line !== null).join('\n');
+}
+
+function processCheckout() {
+    const errorEl = $('checkout-error');
+    const cart = getCart();
+    if (cart.length === 0) {
+        errorEl.textContent = 'Tu carrito está vacío. Añade productos antes de pagar.';
+        return;
+    }
+
+    const emailInput = $('ship-email'), nameInput = $('ship-name'), addressInput = $('ship-address');
+    const email = emailInput.value.trim(), name = nameInput.value.trim(), address = addressInput.value.trim();
+
+    const badEmail = email !== '' && !validateEmail(email); // el email es opcional
+    const badName = name.length < 2;
+    const badAddress = address.length < 5;
+    markError(emailInput, badEmail);
+    markError(nameInput, badName);
+    markError(addressInput, badAddress);
+    if (badEmail || badName || badAddress) {
+        errorEl.textContent = 'Revisa los campos marcados en rojo antes de continuar.';
+        return;
+    }
+    errorEl.textContent = '';
+
+    const methods = { tarjeta: 'Tarjeta', paypal: 'PayPal', efectivo: 'Efectivo contra entrega' };
+    const orderNumber = Math.floor(100000 + Math.random() * 900000);
+    const message = buildOrderMessage(orderNumber, { name, address, email, method: methods[$('payment-method').value] }, cart);
+    pendingOrderUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    window.open(pendingOrderUrl, '_blank');
+
+    $('confirmation-text').textContent =
+        `Pedido #${orderNumber} por ${formatMoney(calculateTotals(cart).total)}. Se abrió WhatsApp con tu pedido: ` +
+        'presiona "Enviar" para que lo recibamos y coordinar el pago y la entrega.';
+    $('wa-fallback').href = pendingOrderUrl;
+    $('confirmation-overlay').classList.add('open');
+
+    // El pedido ya se envió: se descuentan las piezas y se actualiza el aviso de "Agotado"
+    registerSale(cart);
+    clearCart();
+    refreshStockUI();
+}
+
+function hideConfirmation() {
+    $('confirmation-overlay')?.classList.remove('open');
+    if (pendingOrderUrl) { // el carrito se vacía al cerrar, por si hay que reabrir WhatsApp
+        pendingOrderUrl = null;
+        clearCart();
+        ['ship-email', 'ship-name', 'ship-address'].forEach((id) => { if ($(id)) $(id).value = ''; });
+    }
+}
+
+function togglePaymentFields() {
+    const method = $('payment-method')?.value;
+    if (!$('card-fields')) return;
+    $('card-fields').style.display = method === 'tarjeta' ? 'block' : 'none';
+    $('paypal-note').style.display = method === 'paypal' ? 'block' : 'none';
+    $('cash-note').style.display = method === 'efectivo' ? 'block' : 'none';
+}
+
+// ---------- Aviso de producto agotado ----------
+
+function markSoldOut(card) {
+    card.classList.add('sold-out');
+    const badge = document.createElement('span');
+    badge.className = 'badge-soldout';
+    badge.textContent = 'Agotado';
+    card.prepend(badge);
+    const btn = card.querySelector('.btn-add');
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Agotado';
+    }
+}
+
+function refreshStockUI() {
+    document.querySelectorAll('.product-card').forEach((card) => {
+        const id = card.dataset.id;
+        if (id && soldOut(id) && !card.classList.contains('sold-out')) markSoldOut(card);
+    });
+    renderSearch($('search-input')?.value || '');
+}
+
+// ---------- Inicialización ----------
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Para pruebas: abre la página con ?reiniciar al final de la dirección para borrar las compras de este dispositivo
+    if (/[?&]reiniciar/.test((window.location && window.location.search) || '')) {
+        try { localStorage.removeItem(SOLD_KEY); } catch (e) {}
+    }
+    renderAll();
+    togglePaymentFields();
+
+    // Cada tarjeta recibe un id para poder enlazarla desde la búsqueda
+    document.querySelectorAll('.product-card').forEach((card) => {
+        if (card.dataset.id) card.id = card.dataset.id;
+        card.querySelector('.btn-add')?.addEventListener('click', () => addToCart(card.dataset.id));
+        if (card.dataset.id && soldOut(card.dataset.id)) markSoldOut(card);
+    });
+
+    $('cart-icon')?.addEventListener('click', openCart);
+    $('cart-close')?.addEventListener('click', closeCart);
+    $('cart-overlay')?.addEventListener('click', (e) => { if (e.target.id === 'cart-overlay') closeCart(); });
+
+    // Búsqueda
+    $('search-icon')?.addEventListener('click', () => ($('search-bar')?.classList.contains('open') ? closeSearch() : openSearch()));
+    $('search-close')?.addEventListener('click', closeSearch);
+    $('search-input')?.addEventListener('input', (e) => renderSearch(e.target.value));
+    $('search-input')?.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSearch(); });
+    $('search-results')?.addEventListener('click', (e) => {
+        const add = e.target.closest('.sr-add');
+        if (add) addToCart(add.dataset.id);
+        else if (e.target.closest('.sr-link')) closeSearch();
+    });
+
+    // Cantidades y eliminar dentro del carrito
+    $('cart-items')?.addEventListener('click', (e) => {
+        const id = e.target.dataset.id;
+        if (!id) return;
+        if (e.target.classList.contains('qty-plus')) changeQty(id, 1);
+        if (e.target.classList.contains('qty-minus')) changeQty(id, -1);
+        if (e.target.classList.contains('cart-item-remove')) removeFromCart(id);
+    });
+
+    // "Ir a pagar": en nosotros.html lleva a la sección de pago de la página principal
+    $('cart-checkout-btn')?.addEventListener('click', () => {
+        closeCart();
+        if ($('pago')) $('pago').scrollIntoView({ behavior: 'smooth' });
+        else window.location.href = 'lumiere_joyas.html#pago';
+    });
+
+    document.querySelectorAll('.payment-option').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.payment-option').forEach((b) => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            $('payment-method').value = btn.dataset.method;
+            togglePaymentFields();
+        });
+    });
+
+    $('btn-checkout')?.addEventListener('click', processCheckout);
+    $('confirmation-close')?.addEventListener('click', hideConfirmation);
+    $('confirmation-overlay')?.addEventListener('click', (e) => { if (e.target.id === 'confirmation-overlay') hideConfirmation(); });
+});
+
+</script>
+<a class="wa-float" href="https://wa.me/50375213830" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">💬</a>
+</body>
+</html>
